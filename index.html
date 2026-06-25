@@ -2,40 +2,39 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Presensia — Sistem Presensi Modern</title>
-    
-    <link rel="icon" type="image/png" href="favicon.png" />
-    <link rel="apple-touch-icon" href="favicon.png" />
     
     <meta name="theme-color" content="#0a0f0d">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="mobile-web-app-capable" content="yes">
 
     <style>
+        /* Mengunci elemen html & body agar pas dengan layar tanpa scrollbar ganda */
         html, body {
             margin: 0;
             padding: 0;
             width: 100%;
-            /* Gunakan 100dvh agar tinggi mutlak mengikuti layar HP, menghindari space kosong */
-            height: 100dvh; 
+            height: 100% !important;
             overflow: hidden;
-            background-color: #0a0f0d; 
+            background-color: #0a0f0d; /* Warna latar belakang gelap biar menyatu */
         }
         
+        /* Memaksa iframe mengambil tinggi layar bersih secara mutlak */
         iframe {
             border: none;
-            position: fixed; /* Paksa iframe menempel ke layar */
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            height: 100dvh; /* Mengikuti tinggi dinamis layar HP terkini */
+            height: 100svh; /* Mengunci area agar tidak terpotong bar navigasi */
             display: block;
         }
     </style>
 </head>
 <body>
-    <iframe src="https://script.google.com/macros/s/AKfycbzoa1myfv0JZ7QAICZxmdPfx9DyZkm1VKWJpMVoIRqcqxqDW2aRA-4KhJ0Wrbd_Hmg3sA/exec" allow="geolocation; camera; microphone"></iframe>
+    <iframe src="https://script.google.com/macros/s/AKfycbzoa1myfv0JZ7QAICZxmdPfx9DyZkm1VKWJpMVoIRqcqxqDW2aRA-4KhJ0Wrbd_Hmg3sA/exec" allow="geolocation"></iframe>
 </body>
 </html>
