@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
     <title>Presensia — Sistem Presensi Modern</title>
     
     <link rel="icon" type="image/png" href="favicon.png" />
@@ -13,32 +13,31 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <style>
-        /* Memaksa elemen induk untuk mengunci layar penuh */
-        body, html { 
-            margin: 0; 
-            padding: 0; 
-            height: 100% !important; 
-            width: 100% !important;
-            overflow: hidden; 
-            background-color: #0a0f0d; 
+        /* Mengunci elemen html & body GitHub agar pas dengan layar penuh perangkat */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100% !important;
+            overflow: hidden;
+            background-color: #0a0f0d; /* Menyamakan warna luar agar tidak kontras */
         }
         
-        /* CSS Sakti agar iframe tidak mengecil di Android & iOS */
-        iframe { 
-            border: none; 
-            position: fixed;
+        /* Solusi Jitu: Memaksa iframe mengambil tinggi layar bersih (viewport height) secara mutlak */
+        iframe {
+            border: none;
+            position: absolute;
             top: 0;
             left: 0;
-            bottom: 0;
-            right: 0;
-            width: 100% !important; 
-            height: 100% !important; 
-            min-width: 100%;
-            min-height: 100%;
+            width: 100%;
+            height: 100%;
+            height: 100dvh; /* Mengikuti tinggi dinamis layar HP terbaru */
+            height: 100svh; /* Mengunci area agar tidak terpotong bar navigasi browser */
+            display: block;
         }
     </style>
 </head>
 <body>
-    <iframe src="https://script.google.com/macros/s/AKfycbwrp5JvAoAXCuEILHurdyMaMf0SAUHEqPmm84szGo8PrNtXuEr0V9TjlVl-Qodbja1XwQ/exec" allow="geolocation"></iframe>
+    <iframe src="https://script.google.com/macros/s/AKfyxDi8JYQUJlJoUy652Cg2eOX-dfoD5r0-Mup-9OedtIn9nBYe6U4l3RRnCz0RSGVFrwNg/exec" allow="geolocation"></iframe>
 </body>
 </html>
